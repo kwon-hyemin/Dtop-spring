@@ -34,7 +34,7 @@ public class PrimeNumber {
 
         }
     }
-    @FunctionalInterface private interface SolutionService{ List<Integer> getSolution(PrimeNumber pn);}
+    @FunctionalInterface interface SolutionService{ List<Integer> getSolution(PrimeNumber pn);}
 
     @Test
     void solutionTest(){

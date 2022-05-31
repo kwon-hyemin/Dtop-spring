@@ -34,19 +34,19 @@ public class MinMax2 {
             return String.format("최소값: %d 최대값: %d ", min, max);
         }
     }
-    @FunctionalInterface private interface SolutionService { Solution solution(Solution s);}//2. s 파라미터 실행
+    @FunctionalInterface interface SolutionService { Solution solution(Solution s);}
     @Test
     void testSolution() {
         int[] arr = {3, 1, 9, 5, 10};
-        SolutionService f = e->{   //3. e element 실행
+        SolutionService f = e->{
             int max = 0;
             int min = 10;
             for (int i: e.getArr()){
                 if(i > max)max = 10;
                 else if (i< min)min = 1;}
-            return Solution.builder().max(max).min(min).build();};// 4.Solution 객체를 Builder 객체로 만들어서 담음
-        Solution s = Solution.builder().arr(arr).build();  //5. s 에 arr 빌더객체 담음 Solution 을 실행시켜서 min max값 출력
-        System.out.println(f.solution(s));//1. f.solution(s) 실행
+            return Solution.builder().max(max).min(min).build();};
+        Solution s = Solution.builder().arr(arr).build();
+        System.out.println(f.solution(s));
     }
 }
 //        Function<List<Integer>, Integer> f = e -> {

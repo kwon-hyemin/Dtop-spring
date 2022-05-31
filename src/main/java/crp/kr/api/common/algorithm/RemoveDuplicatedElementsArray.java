@@ -24,14 +24,13 @@ import java.util.Arrays;
 public class RemoveDuplicatedElementsArray {
     @Builder @Getter @AllArgsConstructor @NoArgsConstructor
     private static class Solution{
-
         private int arr;// 원래잇는
         @Override
         public String toString() {
             return String.format("새배열: %d", arr);
         }
     }
-//배열를 Set 타입으로 변환
+    //배열를 Set 타입으로 변환
     @FunctionalInterface private interface SolutionService{ Solution solution(Solution s);}
     @Test
     void solutionTest(){
